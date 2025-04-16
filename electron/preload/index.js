@@ -9,7 +9,12 @@ const Conf = require("ee-core/config");
 module.exports = async () => {
 
     // 已实现的功能模块，可选择性使用和修改
-    // Addon.get('tray').create();
+    let trayCfg = Conf.getValue('addons.tray');
+    console.log('trayCfg->',trayCfg);
+    if (trayCfg.enable === true){
+        Addon.get('tray').create();
+    }
+
     Addon.get('security').create();
     Addon.get('awaken').create();
     // Addon.get('autoUpdater').create();

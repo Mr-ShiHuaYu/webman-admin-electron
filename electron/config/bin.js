@@ -2,6 +2,8 @@
  * ee-bin 配置
  * 仅适用于开发环境
  */
+const settingConfig = require('./readSetting');
+
 module.exports = {
     /**
      * development serve ("frontend" "electron" )
@@ -17,7 +19,7 @@ module.exports = {
             // port: 8080,
             // indexPath: 'index.html'
             hostname: 'localhost',
-            port: 8788,
+            port: settingConfig.webman.port || 8787,
             indexPath: 'index.html', // // 'file://'协议时有效，入口文件
         },
         electron: {

@@ -1,11 +1,11 @@
 {
-  "productName": "webman-electron",
-  "appId": "com.electron.ee",
-  "copyright": "© 2023 ace hua Technology Co., Ltd.",
+  "productName": "webman-admin-electron",
+  "appId": "com.webman-admin-electron.ee",
+  "copyright": "© 2025 ace hua Technology Co., Ltd.",
   "directories": {
     "output": "out"
   },
-  "asar": true,
+  "asar": false,
   "files": [
     "**/*",
     "!frontend/",
@@ -18,10 +18,16 @@
     "!electron/addon/tray/",
     "!publicbak/"
   ],
-  "extraResources": {
-    "from": "build/extraResources/",
-    "to": "extraResources"
-  },
+  "extraResources": [
+    {
+      "from": "build/extraResources/",
+      "to": "extraResources"
+    },
+    {
+      "from": "setting.json",
+      "to": "../setting.json"
+    }
+  ],
   "nsis": {
     "oneClick": false,
     "allowElevation": true,
@@ -31,7 +37,7 @@
     "installerHeaderIcon": "build/icons/icon.ico",
     "createDesktopShortcut": true,
     "createStartMenuShortcut": true,
-    "shortcutName": "EE框架"
+    "shortcutName": "webman-admin-electron"
   },
   "mac": {
     "icon": "build/icons/icon.icns",

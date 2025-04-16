@@ -4,6 +4,7 @@ const path = require('path');
 
 const settingConfig = require('./readSetting');
 const webmanConfig = settingConfig.webman;
+const trayEnable = settingConfig.tray;
 
 /**
  * 默认配置
@@ -30,7 +31,7 @@ module.exports = (appInfo) => {
      * 主窗口
      */
     config.windowsOption = {
-        title: settingConfig.windowsOption.title || 'electron webman',
+        title: settingConfig.windowsOption.title || 'webman admin electron',
         width: settingConfig.windowsOption.width || 980,
         height: settingConfig.windowsOption.height || 650,
         minWidth: settingConfig.windowsOption.minWidth || 400,
@@ -158,8 +159,8 @@ module.exports = (appInfo) => {
             enable: true,
         },
         tray: {
-            enable: true,
-            title: 'EE程序',
+            enable: trayEnable,
+            title: settingConfig.windowsOption.title || 'webman admin electron',
             icon: '/public/images/tray.png'
         },
         security: {
