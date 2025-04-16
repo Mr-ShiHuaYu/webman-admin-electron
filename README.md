@@ -143,6 +143,13 @@ Mac软件包：out/xxxx.dmg
 Linux软件包：out/xxx.deb 
 ```
 
+## 运行
+- 一定不能放在含有有中文的目录
+- 一定不能放在含有空格的目录
+例如，以下目录均不行
+- C:\Program Files //不行，有空格
+- D:\软件\webman-admin-electron // 不行，含有中文目录
+
 # 兼容window 7 系统
 微软已经停止对 win7系统支持。需要支持win7的，请使用以下开发环境
 ```
