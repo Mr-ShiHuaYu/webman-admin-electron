@@ -64,8 +64,20 @@
 build/extraResources目录  //存放php.exe文件及webman项目
 
 ## 项目原理分析
-本项目原理较为简单，只是在electron-egg项目的基础上，在 `electron/addon`目录下添加了`webman`目录插件
+本项目原理较为简单，只是在electron-egg项目的基础上，在 `electron/addon`目录下添加了`webman`目录插件。
 然后在 `electron/preload/index.js`中选择加载的插件。
+webman插件主要只做2件事，启动时，运行
+
+```shell
+php.exe windows.php
+```
+结束时，运行
+
+```shell
+taskkill /T /F /pid ${pid}
+```
+> 其中，${pid}为之前启动时的进程ID
+
 
 ## 自带的webman项目说明
 此webman 项目，是v1版本，目前还未升级v2
@@ -130,3 +142,10 @@ node.js <= 16版本
 electron-builder <= 23.6.0
 
 ```
+
+## TODO
+- [ ] 升级egg为v4
+- [ ] 升级webman admin为v2版本，以支持协程
+- [ ] 添加go语言的示例
+
+## 欢迎PR
