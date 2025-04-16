@@ -32,8 +32,8 @@
 ## 配置文件`setting.json`说明
 ```json5
 {
-  "openDevTools": true, // 是否打开浏览器调试工具
-  "openAppMenu": true, // 是否打开应用程序顶部菜单
+  "openDevTools": false, // 是否打开浏览器调试工具
+  "openAppMenu": false, // 是否打开应用程序顶部菜单,显示file,edit那些
   "tray": false,//是否显示拖盘，true开启，开启时，点击右上角关闭为最小化到拖盘
   "windowsOption": {
     "title": "学生管理系统xxx", // 软件顶部或左上角名称(会被 html中的 title标签覆盖)
@@ -61,7 +61,14 @@
 ```
 
 ## 目录说明
-build/extraResources目录  //存放php.exe文件及webman项目
+build/extraResources目录用于存放php.exe文件及webman项目
+
+可在`build/extraResources`直接替换自己的webman admin项目，项目目录名在`setting.json`中配置
+
+相应的php.exe可以使用php官网下载的官方版本，也可以使用静态PHP版本，也可以使用任意定制的版本，只要保证保证`php.exe windows.php`运行成功就OK.
+
+其余目录结构说明，请查看egg官网，详情（V3)：
+https://www.kaka996.com/pages/ee9aed/
 
 ## 项目原理分析
 本项目原理较为简单，只是在electron-egg项目的基础上，在 `electron/addon`目录下添加了`webman`目录插件。
@@ -78,10 +85,12 @@ taskkill /T /F /pid ${pid}
 ```
 > 其中，${pid}为之前启动时的进程ID
 
+欢迎PR，FORK修改为兼容Linux和Mac版本，只要修改
+`electron/addon/webman/server.js` 文件中的// todo 部分即可。
 
 ## 自带的webman项目说明
 此webman 项目，是v1版本，目前还未升级v2
-原来的webman admin的数据库-所有表功能是基于mysql数据库的，就是其代码生成功能是基于mysql数据库的，不适用于sqllite数据库，为了使兼容sqlite，修改了2个文件，分别是：
+原来的webman admin的数据库-所有表功能是基于mysql数据库的，就是其代码生成功能是基于mysql数据库的，不适用于sqlite数据库，为了使兼容sqlite，修改了2个文件，分别是：
 plugin/admin/app/common/Util.php
 plugin/admin/app/controller/Crud.php
 可以自行对比修改了什么内容
@@ -128,8 +137,8 @@ npm run build-lp-64 (64位 pacman包)
 ```
 # 程序
 目录：electron-egg/out
-Windows安装包：out/electron-egg-windows-2.0.3.exe  
-Windows免安装包：out/ee-win-3.0.1-ia32.7z
+Windows安装包：out/webman-admin-electron-win-0.0.1-x64.exe  
+Windows免安装包：out/webman-admin-electron-win-0.0.1-x64.7z
 Mac软件包：out/xxxx.dmg
 Linux软件包：out/xxx.deb 
 ```
@@ -147,5 +156,6 @@ electron-builder <= 23.6.0
 - [ ] 升级egg为v4
 - [ ] 升级webman admin为v2版本，以支持协程
 - [ ] 添加go语言的示例
+- [ ] 兼容sqlite，添加代码生成功能
 
 ## 欢迎PR

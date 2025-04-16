@@ -1,6 +1,6 @@
 {
   "openDevTools": false,
-  "openAppMenu": true,
+  "openAppMenu": false,
   "tray": false,
   "windowsOption": {
     "title": "Webman Admin Electron",
