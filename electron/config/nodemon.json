@@ -1,0 +1,12 @@
+{
+  "watch": [
+    "electron/"
+  ],
+  "ignore": [],
+  "ext": "js,json",
+  "verbose": true,
+  "exec": "ee-bin dev",
+  "restartable": "hr",
+  "colours": true,
+  "events": {}
+}

@@ -1,0 +1,27 @@
+{
+  "openDevTools": true,
+  "openAppMenu": true,
+  "windowsOption": {
+    "title": "Webman Admin Electron",
+    "width": 980,
+    "height": 650,
+    "minWidth": 400,
+    "minHeight": 300,
+    "icon": "logo.png"
+  },
+  "logger": {
+    "level": "ERROR",
+    "rotator": "day",
+    "appLogName": "app.log",
+    "coreLogName": "ee-core.log",
+    "errorLogName": "error.log"
+  },
+  "webman": {
+    "enable": true,
+    "hostname": "localhost",
+    "phpPath": "php/php80.exe",
+    "port": 8787,
+    "projectPath": "webman",
+    "stdioIgnore": false
+  }
+}
