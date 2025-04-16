@@ -100,7 +100,7 @@ plugin/admin/app/controller/Crud.php
 
 ## 打包
 我一般使用 `npm run build-wz`来构建7z压缩包，免安装版本
-
+重新运行打包命令会删除旧文件
 > 相关配置文件位于 electron/config/builder.json
 > 
 ```

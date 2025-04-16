@@ -10,7 +10,6 @@ module.exports = async () => {
 
     // 已实现的功能模块，可选择性使用和修改
     let trayCfg = Conf.getValue('addons.tray');
-    console.log('trayCfg->',trayCfg);
     if (trayCfg.enable === true){
         Addon.get('tray').create();
     }
